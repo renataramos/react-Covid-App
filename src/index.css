@@ -1,0 +1,136 @@
+body {
+  margin: 50px;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: slategrey
+}
+h1 {
+  color:aliceblue;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#nav {
+  margin-top: 40px;
+  max-width: 400px;
+}
+
+img {
+  margin-right: 50px ;
+  vertical-align: middle;
+  padding: 1px;
+  background-color: steelblue;
+}
+
+
+button{
+  padding: 11px;
+  color: steelblue;
+  width: 117px;
+  margin-right: 5px;
+  background-color: steelblue;
+  color: white;
+  border-color: steelblue;
+
+}
+button:hover {
+  border-color: aliceblue;
+}
+
+
+button:focus{
+  background-color:aliceblue;
+  color: steelblue;
+  outline:none;
+  border-color:aliceblue;
+}
+
+
+#homeBtn{
+  max-width: 100px;
+}
+
+#homeBtn:hover{
+  background-color: lightblue;
+  color: steelblue
+}
+
+
+#Title{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#link{
+  color: black;
+}
+
+#num{
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+#container{
+  background-color: aliceblue;
+  max-width: 361px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 25px;
+  
+}
+
+#country-card{
+  background-color:aliceblue;
+
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  border-radius: 3px;
+}
+
+#details{
+  margin-top: 21px
+}
+
+#input-btn{
+  width: 55px;
+}
+
+#input-btn:focus{
+  width: 55px;
+  background-color: steelblue;
+  color: white;
+  border-color: steelblue;
+}
+
+#input-btn:hover{
+  width: 55px;
+  background-color: lightblue;
+  border-color: lightblue;
+  color: steelblue
+}
+
+
+#input{
+  height: 50px;
+  margin-left: 20px;
+  width: 240px;
+}
+
+#inputField{
+  margin-top: 17px;
+}
+
+
+
+
+
+
