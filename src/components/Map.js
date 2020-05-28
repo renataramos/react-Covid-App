@@ -7,7 +7,7 @@ const Wrapper = styled.div`
     width: ${props => props.width};
     height: ${props => props.height};`
 
-export default class HomeMap extends React.Component{
+export default class Map extends React.Component{
 
     constructor(props){
         super(props)

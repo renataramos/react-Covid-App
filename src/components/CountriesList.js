@@ -12,6 +12,7 @@ export default function CountriesList(props){
                     <div>
                     
                     <div id="num">
+                        <h5 style={{color: 'orange'}}><strong>total of cases:</strong></h5> 
                         <h3 style={{color: 'orange'}}><strong>{props.casesNum}</strong></h3>
                     </div>
                         <ul>
@@ -31,6 +32,7 @@ export default function CountriesList(props){
             return (
                     <div>
                     <div id="num">
+                        <h5 style={{color: 'red'}}><strong>total of deaths:</strong></h5> 
                         <h3 style={{color: 'red'}}><strong>{props.deathsNum}</strong></h3>
                     </div>
                         <ul>
@@ -50,6 +52,7 @@ export default function CountriesList(props){
             return (
                     <div>
                     <div id="num">
+                        <h5 style={{color: 'green'}}><strong>total of recovered:</strong></h5> 
                         <h3 style={{color: 'green'}}><strong>{props.recoveredNum}</strong></h3>
                     </div>
                         <ul>
@@ -73,6 +76,7 @@ export default function CountriesList(props){
             return (
                 <div>
                     <div id="num">
+                        <h5 style={{color: 'orange'}}><strong>total of cases:</strong></h5> 
                         <h3 style={{color: 'orange'}}><strong>{props.casesNum}</strong></h3>
                     </div>
                         <ul>
@@ -91,6 +95,7 @@ export default function CountriesList(props){
             return (
                 <div>
                     <div id="num">
+                        <h5 style={{color: 'green'}}><strong>total of recovered:</strong></h5> 
                         <h3 style={{color: 'green'}}><strong>{props.recoveredNum}</strong></h3>
                     </div>
                         <ul>
@@ -110,6 +115,7 @@ export default function CountriesList(props){
             return (
                 <div>
                     <div id="num">
+                        <h5 style={{color: 'red'}}><strong>total of deaths:</strong></h5> 
                         <h3 style={{color: 'red'}}><strong>{props.deathsNum}</strong></h3>
                     </div>
                         <ul>

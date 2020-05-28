@@ -2,7 +2,7 @@ import React from 'react';
 import CountriesList from './CountriesList.js'
 import NavBar from './NavBar.js'
 import Input from './Input.js'
-import Map from './HomeMap.js'
+import Map from './Map.js'
 
 async function fetchGlobalData(){
     const api = `https://disease.sh/v2/all`;
@@ -31,7 +31,8 @@ export default class Home extends React.Component {
             activeView: 'cases',
             countries: [],
             input: '',
-            filtered: false
+            filtered: false,
+            loading: true
         }
         this._isMounted = false
         this.handleGlobalData = this.handleGlobalData.bind(this)
@@ -58,9 +59,13 @@ export default class Home extends React.Component {
     }
 
     handleGlobalData(){
+        this.setState({
+            loading: true
+        })
         fetchGlobalData()
         .then((data) =>{
             this.setState({
+                loading: false,
                 casesNum: data.cases,
                 recoveredNum: data.recovered,
                 deathsNum: data.deaths
@@ -101,7 +106,7 @@ export default class Home extends React.Component {
 
     render(){
         return (
-            <div>
+            <div id="content">
                 <table>
                 <thead>
                     <tr>

@@ -2,6 +2,7 @@ import React from 'react';
 import {useParams, Link} from 'react-router-dom'
 import {useEffect, useState} from 'react'
 import {browserHistory} from 'react-router'
+import Loading from './Loading.js'
 
 
 
@@ -13,7 +14,10 @@ function catchError(){
 export default function Country() {
 
     const [country, setCountry] = useState({})
-    const [flag, setFlag] = useState({}) 
+    const [flag, setFlag] = useState({})
+    const [loadingStatus, setLoadingStatus]  = useState({})
+
+
     
     const {countryID} = useParams();
 
@@ -31,11 +35,12 @@ export default function Country() {
     useEffect(()=>{
         let isMounted= true;
             
-            
+        setLoadingStatus(true)    
         fetchData().then((data)=> {
             if (isMounted && data){
                 setCountry(data)
                 setFlag(data.countryInfo.flag)
+                setLoadingStatus(false)
             }    
         }).catch(catchError);
 
@@ -49,7 +54,10 @@ export default function Country() {
     }
 
     return (
-       <div id="country-container">
+       <div>
+       {loadingStatus=== true
+       ? <Loading/>
+       : <div id="country-container">
             <div id="country-title">
                 <h3><strong>{country.country}</strong></h3>
                 <h5>_in <em>{country.continent}</em></h5>
@@ -76,6 +84,7 @@ export default function Country() {
                 <br></br>
                 <Link id="homeBtn" to="/"><i id="homeBtn" className="fas fa-home"/></Link>
             </div>
+        </div>}
         </div>
     
     )
