@@ -4,8 +4,7 @@ export default function Loading(){
 
 
     return (
-        <div id="loading">
-            
+        <div>
             <i id="loading-icon" className="fas fa-sync"></i>
         </div>
 

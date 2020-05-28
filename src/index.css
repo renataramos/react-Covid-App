@@ -31,12 +31,13 @@ img {
 
 button{
   padding: 11px;
-  color: steelblue;
+  
   width: 117px;
   margin-right: 5px;
   background-color: steelblue;
   color: white;
   border-color: steelblue;
+  border: 0;
 
 }
 button:hover {
@@ -115,6 +116,7 @@ button:focus{
 #map {
   max-width: 1000px;
   margin-top: 40px;
+  margin-left: 17px;
   border: 5px solid aliceblue;
   background-color: black;
 }

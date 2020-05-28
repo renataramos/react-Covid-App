@@ -17,8 +17,6 @@ export default function Country() {
     const [flag, setFlag] = useState({})
     const [loadingStatus, setLoadingStatus]  = useState({})
 
-
-    
     const {countryID} = useParams();
 
     async function fetchData(){
