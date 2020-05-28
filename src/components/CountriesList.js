@@ -4,7 +4,6 @@ import {
 } from 'react-router-dom'
 
 
-
 export default function CountriesList(props){
 
     if (!props.isFiltered){

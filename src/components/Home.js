@@ -103,6 +103,7 @@ export default class Home extends React.Component {
         return (
             <div>
                 <table>
+                <thead>
                     <tr>
                         <td>
                             <div id="list">
@@ -134,10 +135,14 @@ export default class Home extends React.Component {
                         </td>
                         <td>
                             <div id="map">
-                                <Map/>
+                                <Map 
+                                activeView={this.state.activeView}
+                                countries={this.state.countries}
+                                />
                             </div>
                         </td>
                     </tr>
+                </thead>
                 </table>
             </div>
             )

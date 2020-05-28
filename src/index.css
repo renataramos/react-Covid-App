@@ -94,9 +94,21 @@ button:focus{
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 25px;
+  height: 692px
+ 
   
 }
 
+#map {
+  max-width: 1000px;
+  margin-top: 40px;
+  border: 5px solid aliceblue;
+  background-color: black;
+}
+
+td {
+  vertical-align: top;
+}
 #country-card{
   background-color:aliceblue;
 
@@ -113,7 +125,7 @@ button:focus{
   padding-left: 55px;
   padding-bottom: 17px;
   padding-top: 27px;
-
+  
 }
 
 #country-container{
@@ -168,14 +180,6 @@ button:focus{
   margin-left: 50px;
 }
 
-#map {
-  max-width: 1000px;
-  margin-top: 40px;
-  border: 5px solid aliceblue;
-  
-  
-  
-}
 
 
 
