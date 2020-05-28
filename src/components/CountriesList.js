@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom'
 
 
+
 export default function CountriesList(props){
 
     if (!props.isFiltered){
@@ -119,7 +120,7 @@ export default function CountriesList(props){
                                         <Link id="link" to={`/${element.country}`}> <strong>{element.country}</strong> : {element.deaths} </Link>
                                     </li>
                                 ))}
-                        </ul>   
+                        </ul> 
                 </div>)
         }
     }

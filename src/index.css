@@ -53,12 +53,15 @@ button:focus{
 
 
 #homeBtn{
-  max-width: 50px;
+  width: 150px;
   padding: 11px;
   background-color: steelblue;
   color: white;
   border-color: steelblue;
+  text-align: center;
+  border-radius: 2px;
 }
+
 
 
 #homeBtn:hover{
@@ -162,6 +165,16 @@ button:focus{
 #error-img {
   max-width: 300px;
   border-radius: 5px;
+  margin-left: 50px;
+}
+
+#map {
+  max-width: 1000px;
+  margin-top: 40px;
+  border: 5px solid aliceblue;
+  
+  
+  
 }
 
 

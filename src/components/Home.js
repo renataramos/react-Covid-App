@@ -2,6 +2,7 @@ import React from 'react';
 import CountriesList from './CountriesList.js'
 import NavBar from './NavBar.js'
 import Input from './Input.js'
+import Map from './HomeMap.js'
 
 async function fetchGlobalData(){
     const api = `https://disease.sh/v2/all`;
@@ -101,31 +102,44 @@ export default class Home extends React.Component {
     render(){
         return (
             <div>
-                <NavBar 
-                onSelectView={this.handleSelectView}
-                />
-
-                
-                <div id = "container">
-                <Input
-                    value={this.state.input}
-                    onInputChange={this.updateInput}
-                    onSubmit={this.toggleFiltered}
-                    isFiltered={this.state.filtered}
-                />
-                
-                    <CountriesList
-                        casesNum={this.state.casesNum}
-                        recoveredNum={this.state.recoveredNum}
-                        deathsNum={this.state.deathsNum}
-                        countries={this.state.countries}
-                        activeView={this.state.activeView}
-                        input={this.state.input}
-                        isFiltered={this.state.filtered}
-                    />
-                </div>
-                
+                <table>
+                    <tr>
+                        <td>
+                            <div id="list">
+                            
+                                <NavBar 
+                                onSelectView={this.handleSelectView}
+                                />
+                                
+                                
+                                <div id = "container">
+                                    <Input
+                                    value={this.state.input}
+                                    onInputChange={this.updateInput}
+                                    onSubmit={this.toggleFiltered}
+                                    isFiltered={this.state.filtered}
+                                    />
+                                    
+                                    <CountriesList
+                                    casesNum={this.state.casesNum}
+                                    recoveredNum={this.state.recoveredNum}
+                                    deathsNum={this.state.deathsNum}
+                                    countries={this.state.countries}
+                                    activeView={this.state.activeView}
+                                    input={this.state.input}
+                                    isFiltered={this.state.filtered}
+                                    />
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="map">
+                                <Map/>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
             </div>
-        )
-    }   
+            )
+        }   
 }

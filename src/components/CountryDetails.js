@@ -6,7 +6,6 @@ import {browserHistory} from 'react-router'
 
 
 function catchError(){
-    console.log("error")
     browserHistory.push('/page-not-found')
     window.location.reload()
 }
