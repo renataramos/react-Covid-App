@@ -51,14 +51,22 @@ button:focus{
 }
 
 
+
 #homeBtn{
-  max-width: 100px;
+  max-width: 50px;
+  padding: 11px;
+  background-color: steelblue;
+  color: white;
+  border-color: steelblue;
 }
+
 
 #homeBtn:hover{
   background-color: lightblue;
   color: steelblue
 }
+
+
 
 
 #Title{
@@ -93,7 +101,20 @@ button:focus{
   padding-right: 50px;
   padding-bottom: 30px;
   padding-top: 30px;
-  border-radius: 3px;
+
+}
+
+#country-title{
+  color: white;
+  background-color: steelblue;
+  padding-left: 55px;
+  padding-bottom: 17px;
+  padding-top: 27px;
+
+}
+
+#country-container{
+  box-shadow: 5px 7px 17px 15px rgba(63, 69, 80, 0.3)
 }
 
 #details{
@@ -129,6 +150,19 @@ button:focus{
   margin-top: 17px;
 }
 
+#error{
+  color:steelblue;
+  text-align: center;
+  background-color: aliceblue;
+  padding: 50px;
+  border-radius: 5px;
+  box-shadow: 5px 7px 17px 15px rgba(63, 69, 80, 0.3)
+}
+
+#error-img {
+  max-width: 300px;
+  border-radius: 5px;
+}
 
 
 

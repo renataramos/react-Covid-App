@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './Home.js'
 import Country from './CountryDetails.js'
+import NotFound from './NotFound.js'
 import {
   BrowserRouter,
   Route,
@@ -20,7 +21,9 @@ function App() {
     
     <Switch>
       <Route exact path='/' component={Home}/>
-      <Route path='/:countryID' component={Country}/>   
+      <Route exact path= '/page-not-found'component={NotFound}/>
+      <Route path='/:countryID' component={Country}/>
+
     </Switch>
       
     
