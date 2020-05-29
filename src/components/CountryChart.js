@@ -31,6 +31,7 @@ export default function CountryChart(props){
 
         async function prepareData(){
             let apiValues = await fetchData();
+
             let rawTimelineData = apiValues["timeline"]
             let rawCasesData = rawTimelineData["cases"]
             let rawRecoveredData = rawTimelineData["recovered"]
@@ -59,7 +60,7 @@ export default function CountryChart(props){
         }
         return () => isMounted = false
 
-    }, [])
+    }, [countryID])
 
     return (
         <div>
