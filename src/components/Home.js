@@ -3,18 +3,30 @@ import CountriesList from './CountriesList.js'
 import NavBar from './NavBar.js'
 import Input from './Input.js'
 import Map from './Map.js'
+import GlobalChart from './GlobalChart.js'
 
 async function fetchGlobalData(){
+    const requestOption = {
+        method: "GET",
+        redirect: "follow",
+        mode: 'cors'
+        
+        
+    }
     const api = `https://disease.sh/v2/all`;
-    const response = await fetch(api);
+    const response = await fetch(api, requestOption);
     const content = await response.json();
   
     return content;
 }
 
 async function fetchCountriesData(){
+    const requestOption = {
+        method: "GET",
+        redirect: "follow"
+    }
     const api = `https://disease.sh/v2/countries`;
-    const response = await fetch(api);
+    const response = await fetch(api, requestOption);
     const content = await response.json();
 
     return content;
@@ -143,8 +155,17 @@ export default class Home extends React.Component {
                                 <Map 
                                 activeView={this.state.activeView}
                                 countries={this.state.countries}
+                                input={this.state.input}
+                                isFiltered={this.state.filtered}
                                 />
                             </div>
+                            <div id="globalChart">
+                                <GlobalChart
+                                activeView={this.state.activeView}
+                                />
+                            </div>
+                            
+                            
                         </td>
                     </tr>
                 </thead>

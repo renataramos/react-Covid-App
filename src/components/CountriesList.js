@@ -15,15 +15,15 @@ export default function CountriesList(props){
                         <h5 style={{color: 'orange'}}><strong>total of cases:</strong></h5> 
                         <h3 style={{color: 'orange'}}><strong>{props.casesNum}</strong></h3>
                     </div>
-                        <ul>
+                        <ol>
                         {props.countries.sort((a,b)=> b.cases - a.cases)
-                            .slice(0,20)
+                            .slice(0,40)
                             .map((element)=>(
                                 <li key = {element.countryInfo._id}>
                                     <Link id="link" to={`/${element.country}`}> <strong>{element.country}</strong> : {element.cases} </Link>
                                 </li>
                             ))}
-                        </ul>   
+                        </ol>   
                     </div>
             )
         }
@@ -35,15 +35,15 @@ export default function CountriesList(props){
                         <h5 style={{color: 'red'}}><strong>total of deaths:</strong></h5> 
                         <h3 style={{color: 'red'}}><strong>{props.deathsNum}</strong></h3>
                     </div>
-                        <ul>
+                        <ol>
                         {props.countries.sort((a,b)=> b.deaths - a.deaths)
-                            .slice(0,20)
+                            .slice(0,40)
                             .map((element)=>(
                                 <li key = {element.countryInfo._id}>
                                     <Link id="link" to={`/${element.country}`}> <strong>{element.country}</strong> : {element.deaths} </Link>
                                 </li>
                                 ))}
-                        </ul>   
+                        </ol>   
                     </div>
             )
         }
@@ -55,16 +55,16 @@ export default function CountriesList(props){
                         <h5 style={{color: 'green'}}><strong>total of recovered:</strong></h5> 
                         <h3 style={{color: 'green'}}><strong>{props.recoveredNum}</strong></h3>
                     </div>
-                        <ul>
+                        <ol>
                         {props.countries.sort((a,b)=> b.recovered - a.recovered)
-                            .slice(0,20)
+                            .slice(0,40)
                             .map((element)=>(
                                 <li key = {element.countryInfo._id}>
                                     <Link id="link" to={`/${element.country}`}> <strong>{element.country}</strong> : {element.recovered} </Link>
                                 </li>
                                 
                                 ))}
-                        </ul>   
+                        </ol>   
                     </div>
             )
         }

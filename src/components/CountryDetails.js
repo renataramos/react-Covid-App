@@ -3,6 +3,7 @@ import {useParams, Link} from 'react-router-dom'
 import {useEffect, useState} from 'react'
 import {browserHistory} from 'react-router'
 import Loading from './Loading.js'
+import CountryChart from './CountryChart.js'
 
 
 
@@ -21,7 +22,7 @@ export default function Country() {
 
     async function fetchData(){
         const data = await fetch(`https://disease.sh/v2/countries/${countryID}`)
-        console.log(data.status);
+   
 
         if (!data.ok){
             throw new Error("Not found")
@@ -31,18 +32,18 @@ export default function Country() {
     }
 
     useEffect(()=>{
-        let isMounted= true;
+        let isMounted=true;
             
         setLoadingStatus(true)    
         fetchData().then((data)=> {
-            if (isMounted && data){
+            if (isMounted){
                 setCountry(data)
                 setFlag(data.countryInfo.flag)
                 setLoadingStatus(false)
             }    
         }).catch(catchError);
 
-        return () => isMounted = false}, []);
+        return () => isMounted = false}, [])
             
                 
     
@@ -80,7 +81,8 @@ export default function Country() {
                     </table>
                 </div>
                 <br></br>
-                <Link id="homeBtn" to="/"><i id="homeBtn" className="fas fa-home"/></Link>
+                <div id="country-chart"><CountryChart/></div>
+                <Link className="fas fa-home" id="homeBtn" to="/"></Link>
             </div>
         </div>}
         </div>
