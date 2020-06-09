@@ -1,3 +1,5 @@
+import {browserHistory} from 'react-router'
+
 export async function fetchGlobalChartData() {
     
     const requestOption = {
@@ -11,8 +13,8 @@ export async function fetchGlobalChartData() {
 
         return response.ok ? response.json() : null
     } catch (err){
-        console.log(err);
-        return null;
+        browserHistory.push('/page-not-found')
+        window.location.reload()
     }
 }
 
@@ -22,15 +24,19 @@ export async function fetchCountryChartData(countryID) {
         redirect: "follow"
     }
 
-    try {
-        const response = await fetch(`https://disease.sh/v2/historical/${countryID}`, requestOption)
+    const response = await fetch(`https://disease.sh/v2/historical/${countryID}`, requestOption)
 
-        return response.ok ? response.json() : null
-    } catch (err){
-        console.log(err);
-        return null;
+    if (!response.ok){
+        return ({
+            timeline: { 
+            cases: 0,
+            recovered: 0,
+            deaths: 0 }
+        })
     }
-}
+    return response.json() 
+} 
+
 
 export async function fetchCountryData(countryID){
     const data = await fetch(`https://disease.sh/v2/countries/${countryID}`)

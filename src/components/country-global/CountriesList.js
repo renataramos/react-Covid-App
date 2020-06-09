@@ -16,7 +16,7 @@ export default function CountriesList(props){
                 </div>
                 <ol id="countries">
                 {props.countries.sort((a,b)=> b[props.activeView] - a[props.activeView])
-                        
+                        .slice(0, 150)
                         .map((element)=>(
                             <li key = {element.country}>
                                 <Link id="link" to={`/${element.country}`}> <strong>{element.country}</strong> : {element[props.activeView]} </Link>

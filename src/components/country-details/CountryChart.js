@@ -7,6 +7,7 @@ import {
 import {fetchCountryChartData} from '../ApiService.js';
 
 
+
 export default function CountryChart(props){
 
     const {countryID} = useParams();
@@ -17,15 +18,16 @@ export default function CountryChart(props){
 
         async function prepareData(){
 
+            
             let apiValues = await fetchCountryChartData(countryID);
 
             let rawTimelineData = apiValues["timeline"]
             let rawCasesData = rawTimelineData["cases"]
             let rawRecoveredData = rawTimelineData["recovered"]
             let rawDeathData = rawTimelineData["deaths"]
-
+    
             const chartData = [];
-
+    
             for (let key in rawCasesData){
                 if (rawCasesData.hasOwnProperty(key)){
                     const newRow = {
@@ -41,6 +43,7 @@ export default function CountryChart(props){
                 setData(chartData)
             }
         }
+        
         prepareData();
         
         return () => isMounted = false
