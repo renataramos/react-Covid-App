@@ -166,10 +166,6 @@ td {
   padding: 50px;
 }
 
-
-
-
-
 /*COUNTRY DETAILS PAGE*/
 
 img {
@@ -180,6 +176,7 @@ img {
   background-color: steelblue;
   max-width: 100%;
 }
+
 #country-card{
   background-color:aliceblue;
 
@@ -192,6 +189,8 @@ img {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+
+
 }
 
 #country-title{
@@ -205,21 +204,20 @@ img {
 
 #country-container{
   
-  box-shadow: 5px 7px 17px 15px rgba(63, 69, 80, 0.3)
+  box-shadow: 5px 7px 17px 15px rgba(63, 69, 80, 0.3);
+  
   
 }
 
 #country-chart{
-  max-width: auto;
-
+  width: 90vw;
+  height: 40vh;
 }
 
 #details{
   display: flex;
   margin-top: 21px;
 }
-
-
 
 
 /*OTHERS*/

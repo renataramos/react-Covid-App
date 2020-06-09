@@ -2,7 +2,7 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import {
-    LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend
+    LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
 import {fetchCountryChartData} from '../ApiService.js';
 
@@ -51,8 +51,8 @@ export default function CountryChart(props){
     }, [countryID])
 
     return (
-      
-      <LineChart width={1100} height={550} data={data}
+      <ResponsiveContainer width="95%" height={450}>
+      <LineChart data={data}
       margin={{ top: 55, right: 30, left: 20, bottom: 75 }}>
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="name" />
@@ -64,6 +64,7 @@ export default function CountryChart(props){
       <Legend />
       <Tooltip />
       </LineChart>
+      </ResponsiveContainer>
       
     )
 }
