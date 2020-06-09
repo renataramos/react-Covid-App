@@ -1,36 +1,11 @@
 import React from 'react';
-import CountriesList from './CountriesList.js'
-import NavBar from './NavBar.js'
-import Input from './Input.js'
-import Map from './Map.js'
-import GlobalChart from './GlobalChart.js'
-
-async function fetchGlobalData(){
-    const requestOption = {
-        method: "GET",
-        redirect: "follow",
-        mode: 'cors'
-        
-        
-    }
-    const api = `https://disease.sh/v2/all`;
-    const response = await fetch(api, requestOption);
-    const content = await response.json();
-  
-    return content;
-}
-
-async function fetchCountriesData(){
-    const requestOption = {
-        method: "GET",
-        redirect: "follow"
-    }
-    const api = `https://disease.sh/v2/countries`;
-    const response = await fetch(api, requestOption);
-    const content = await response.json();
-
-    return content;
-}
+import CountriesList from './country-global/CountriesList.js'
+import NavBar from './country-global/NavBar.js'
+import Input from './country-global/Input.js'
+import Map from './country-global/Map.js'
+import GlobalChart from './country-global/GlobalChart.js'
+import {fetchCountriesData} from './ApiService.js'
+import {fetchGlobalData} from './ApiService.js'
 
 export default class Home extends React.Component {
 
@@ -139,9 +114,9 @@ export default class Home extends React.Component {
                                     />
                                     
                                     <CountriesList
-                                    casesNum={this.state.casesNum}
-                                    recoveredNum={this.state.recoveredNum}
-                                    deathsNum={this.state.deathsNum}
+                                    cases={this.state.casesNum}
+                                    recovered={this.state.recoveredNum}
+                                    deaths={this.state.deathsNum}
                                     countries={this.state.countries}
                                     activeView={this.state.activeView}
                                     input={this.state.input}
@@ -163,14 +138,12 @@ export default class Home extends React.Component {
                                 <GlobalChart
                                 activeView={this.state.activeView}
                                 />
-                            </div>
-                            
-                            
+                            </div>       
                         </td>
                     </tr>
                 </thead>
                 </table>
             </div>
-            )
-        }   
+        )
+    }   
 }

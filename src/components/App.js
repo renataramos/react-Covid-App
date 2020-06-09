@@ -1,6 +1,6 @@
 import React from 'react';
 import Home from './Home.js'
-import Country from './CountryDetails.js'
+import Country from './country-details/CountryDetails.js'
 import NotFound from './NotFound.js'
 import {
   BrowserRouter,
@@ -10,7 +10,6 @@ import {
 
 function App() {
 
-
   return (
     <BrowserRouter>
       <div>
@@ -19,12 +18,11 @@ function App() {
             <h6>an <strong>unfortunate name</strong> for an <strong>awesome app</strong></h6>
         </div>
       
-      <Switch>
-        <Route exact path='/' component={Home}/>
-        <Route exact path= '/page-not-found'component={NotFound}/>
-        <Route path='/:countryID' component={Country}/>
-
-      </Switch>
+        <Switch>
+          <Route exact path='/' component={Home}/>
+          <Route exact path= '/page-not-found'component={NotFound}/>
+          <Route path='/:countryID' component={Country}/>
+        </Switch>
       </div>
     </BrowserRouter>
   
