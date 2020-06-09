@@ -76,9 +76,9 @@ export default function GlobalChart(props){
     return (
         <div id="homeChart" className="chart-wrapper">
             <div id="chartTitle"><h4><strong>last 30 days evolution worldwide</strong></h4></div>
-            <ResponsiveContainer width="95%" height={350}>
+            <ResponsiveContainer width="95%" height={450}>
             
-                <AreaChart width={970} height={350} data={data[props.activeView]}
+                <AreaChart width={970} height={450} data={data[props.activeView]}
                 margin={{ top: 0, right: 10, left: 30, bottom: 70 }}>
                 <defs>
                     <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">

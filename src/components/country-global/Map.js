@@ -14,7 +14,7 @@ export default class Map extends React.Component{
     componentDidMount(){
         this.map = L.map('map', {
             center: [27, 0],
-            zoom: 1.5,
+            zoom: 2.5,
             scrollWheelZoom: false
           });
 
