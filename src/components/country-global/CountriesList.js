@@ -14,11 +14,11 @@ export default function CountriesList(props){
                     <h5 style={{color: conditionalStyling(props.activeView)}}><strong>total of {props.activeView}:</strong></h5> 
                     <h3 style={{color: conditionalStyling(props.activeView)}}><strong>{props[props.activeView]}</strong></h3>
                 </div>
-                <ol>
+                <ol id="countries">
                 {props.countries.sort((a,b)=> b[props.activeView] - a[props.activeView])
-                        .slice(0,40)
+                        
                         .map((element)=>(
-                            <li key = {element.countryInfo._id}>
+                            <li key = {element.country}>
                                 <Link id="link" to={`/${element.country}`}> <strong>{element.country}</strong> : {element[props.activeView]} </Link>
                             </li>
                         ))}

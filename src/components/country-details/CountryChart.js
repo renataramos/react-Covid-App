@@ -37,14 +37,12 @@ export default function CountryChart(props){
                     chartData.push(newRow)
                 }
             }
-
-            setData(chartData)
+            if (isMounted){
+                setData(chartData)
+            }
         }
-
-        if(isMounted){
-            prepareData();
-        }
-
+        prepareData();
+        
         return () => isMounted = false
 
     }, [countryID])
