@@ -11,7 +11,7 @@ import {fetchCountryChartData} from '../ApiService.js';
 export default function CountryChart(props){
 
     const {countryID} = useParams();
-    const [data, setData] = useState({});
+    const [data, setData] = useState([]);
 
     useEffect(()=>{
         let isMounted=true;

@@ -13,7 +13,7 @@ export default class Map extends React.Component{
 
     componentDidMount(){
         this.map = L.map('map', {
-            center: [27, 0],
+            center: [25, -20],
             zoom: 2.5,
             scrollWheelZoom: false
           });
@@ -43,7 +43,7 @@ export default class Map extends React.Component{
         }
 
         if(!this.props.isFiltered){
-            this.props.countries.sort((a,b) => b[this.props.activeView] - a[this.props.activeView])
+            this.props.countries
             .map((element) => {
                 const circleRadius = element[this.props.activeView]/25000;
                 const layer = L.circleMarker([element.countryInfo.lat, element.countryInfo.long], {color: conditionalStyling(this.props.activeView), radius: circleRadius})
